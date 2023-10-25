@@ -1,4 +1,5 @@
-# STDecompositionAdjustment
+
+## DecompositionAdjustment
 Adjustment of scRNA-seq data to improve cell-type decomposition of spatial transcriptomics
 
 ## Description
@@ -9,11 +10,12 @@ Most sequencing-based spatial transcriptomics technologies do not achieve single
 The framework adjusted scRNA-seq data to correctly match the cell-type-specific gene expression and estimate the cell type composition of each spot. 
 We constructed two simulated datasets and colloected four paired real datasets in our framework and conducted experiments on eight decomposition methods with raw / adjusted scRNA-seq and ST data as input. 
 Our framework includes three steps:
-1) we employed KMM method to adjust scRNA-seq data by ST data. Based on the cell-type-specific genes and cell types of scRNA-seq data, "Adjust_sc" function in KMM_Adjustment.py generated the adjusted scRNA-seq data.
-2) we input the raw scRNA-seq data / adjusted scRNA-seq data and ST data, respectively, into eight decomposition methods (DecompositionMethods) (SPOTlight, SpatialDWLS, RCTD, CARD, STRIDE, stereoscope, cell2location, DSTG). 
-* “DecompositionMethods”：
-   * codes for eight decomposition methods.
-3) we compared the Raw results and Adjusted results on some metrics.
+1) we employed KMM method to adjust scRNA-seq data by ST data based on the cell-type-specific genes and cell types of scRNA-seq data, after data Adjustment, the adjusted scRNA-seq data was generated.
+* KMM_Adjustment.py: codes for generate adjusted scRNA-seq data.
+2) we input the raw scRNA-seq data / adjusted scRNA-seq data and ST data, respectively, into eight decomposition methods (SPOTlight, SpatialDWLS, RCTD, CARD, STRIDE, stereoscope, cell2location, DSTG). 
+* Construction_Simu_I.R: the construction of Simulated data I, and the raw and simulated data was shown in "Datasets".
+* "DecompositionMethods"：codes for eight decomposition methods.
+3) we compared the Raw results and Adjusted results on metrics.
 
 
 ## Related link
