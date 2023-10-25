@@ -1,24 +1,19 @@
 
 """
-The KMM method dealt with the issue of correcting sample selection bias using unlabeled data in [1].
-By estimating the probability density distribution, it reuses instances based on the weight generation rules and aims to make the distribution of the weighted source domain and target domain as close as possible in transfer learning.
+The KMM method dealt with the issue of correcting sample selection bias using unlabeled data in [35].
+By estimating the probability density distribution,
+it reuses instances based on the weight generation rules and aims to make the distribution of the weighted source domain and target domain as close as possible in transfer learning.
 
-Reference:
-[1] Bernhard S, John P, Thomas H. Correcting Sample Selection Bias by Unlabeled Data. Advances in Neural Information Processing Systems 19: Proceedings of the 2006 Conference. MIT Press, 2007, pp.601-608.
+reference:
+[35] Schölkopf B, Platt J, Hofmann T. Correcting sample selection bias by unlabeled data. Adv. neural inf. process. syst. 2007;601–608.
 """
 
+import os
 import pandas as pd
 import numpy as np
 import sklearn.metrics
 from cvxopt import matrix, solvers
-# import matplotlib.pyplot as plt
-# import seaborn as sns
-# import scipy.stats as stats
-# from sklearn import svm
-# import os
-# from sklearn.neighbors import KNeighborsClassifier
-# from sklearn.metrics import accuracy_score
-# import argparse
+
 
 
 def kernel(ker, X1, X2, gamma):
@@ -151,8 +146,6 @@ def Adjust_sc(sc_exp, sc_meta, st_exp, cts_genes, kernel_type='rbf', gamma=None,
 
 
 # Data Adjustment for Simulated data I
-import pandas as pd
-import os
 import KMM_Adjustment
 
 # Simulated data I
